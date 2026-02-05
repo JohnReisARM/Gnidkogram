@@ -28,6 +28,8 @@ int main() {
 
      while(1) {
 	 std::getline(std::cin, msg);
+	 
+	 
 	 //	 std::cin >> msg;
 	 if(msg != "") {
 	     pac.clear();
