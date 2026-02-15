@@ -65,7 +65,10 @@ clean:
 
 
 prepareinstall:
-	apt install pkg-config
-	apt install libsfml-dev
+	sudo apt install g++
+	sudo apt install pkg-config
+	sudo apt install libsfml-dev
 	@echo "\n\nЕсли что-то встанет не так, то нужно "\
-	"исправить направления к исходникам\n\n"
+	"исправить направления к исходникам. Так что "\
+	"стоит проверить где лежит SFML"
+	"\n\n"
