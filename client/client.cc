@@ -2,6 +2,9 @@
 #include <iostream>
 #include <string>
 #include <thread>
+#define NOTIFY_ENABLE 0
+
+
 
 void check_new_massage(sf::Packet & pac, sf::TcpSocket & socket) {
     std::string name;
@@ -12,7 +15,10 @@ void check_new_massage(sf::Packet & pac, sf::TcpSocket & socket) {
 	 if(socket.receive(pac) == sf::Socket::Done ) {
 	     pac >> name >> awnser;
 	     std::cout << name << ": " << awnser << std::endl;
-	     
+
+#if NOTIFY_ENABLE == 1
+	     system("notify-send \"new massage\"");
+#endif
 	 }
 	 
 	 std::this_thread::sleep_for(std::chrono::milliseconds(100));
