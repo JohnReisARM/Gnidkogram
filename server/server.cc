@@ -53,6 +53,7 @@ int main() {
 
     // Слушаем порт, если нет, то судьба против
     listener.listen(port_num);
+    std::cout << "wait client" << std::endl;
     if(listener.accept(socket) != sf::Socket::Done) {
 	std::cout << "Cant listen socket, stopping program" << std::endl;
 	return -1;
